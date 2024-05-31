@@ -32,13 +32,13 @@
                     <div class="grid grid-cols-2 gap-x-4">
                       <div v-for="item in category.featured" :key="item.name" class="group relative text-sm">
                         <div class="aspect-h-1 aspect-w-1 overflow-hidden rounded-lg bg-gray-100 group-hover:opacity-75">
-                          <img :src="item.imageSrc" :alt="item.imageAlt" class="object-cover object-center" />
+                          <img :src="appUseUtils.getImgUrl(item.imageSrc)" :alt="item.imageAlt" class="object-cover object-center" />
                         </div>
                         <a :href="item.href" class="mt-6 block font-medium text-gray-900">
                           <span class="absolute inset-0 z-10" aria-hidden="true" />
                           {{ item.name }}
                         </a>
-                        <p aria-hidden="true" class="mt-1">Shop now</p>
+                        <p aria-hidden="true" class="mt-1">Comprar ahora</p>
                       </div>
                     </div>
                     <div v-for="section in category.sections" :key="section.name">
@@ -106,7 +106,7 @@
               <div class="flex h-full space-x-8">
                 <Popover v-for="category in navigation.categories" :key="category.name" class="flex" v-slot="{ open }">
                   <div class="relative flex">
-                    <PopoverButton :class="[open ? 'border-indigo-600 text-indigo-600' : 'border-transparent text-gray-700 hover:text-gray-800', 'relative z-10 -mb-px flex items-center border-b-2 pt-px text-sm font-medium transition-colors duration-200 ease-out']">{{ category.name }}</PopoverButton>
+                    <PopoverButton :class="[open ? 'border-amber-600 text-amber-600' : 'border-transparent text-gray-700 hover:text-gray-800', 'relative z-10 -mb-px flex items-center border-b-2 pt-px text-sm font-medium transition-colors duration-200 ease-out']">{{ category.name }}</PopoverButton>
                   </div>
 
                   <transition enter-active-class="transition ease-out duration-200" enter-from-class="opacity-0" enter-to-class="opacity-100" leave-active-class="transition ease-in duration-150" leave-from-class="opacity-100" leave-to-class="opacity-0">
@@ -120,13 +120,13 @@
                             <div class="col-start-2 grid grid-cols-2 gap-x-8">
                               <div v-for="item in category.featured" :key="item.name" class="group relative text-base sm:text-sm">
                                 <div class="aspect-h-1 aspect-w-1 overflow-hidden rounded-lg bg-gray-100 group-hover:opacity-75">
-                                  <img :src="item.imageSrc" :alt="item.imageAlt" class="object-cover object-center" />
+                                  <img :src="appUseUtils.getImgUrl(item.imageSrc)" :alt="item.imageAlt" class="object-cover object-center" />
                                 </div>
                                 <a :href="item.href" class="mt-6 block font-medium text-gray-900">
                                   <span class="absolute inset-0 z-10" aria-hidden="true" />
                                   {{ item.name }}
                                 </a>
-                                <p aria-hidden="true" class="mt-1">Shop now</p>
+                                <p aria-hidden="true" class="mt-1">Comprar ahora</p>
                               </div>
                             </div>
                             <div class="row-start-1 grid grid-cols-3 gap-x-8 gap-y-10 text-sm">
@@ -152,9 +152,11 @@
 
             <div class="ml-auto flex items-center">
               <div class="hidden lg:flex lg:flex-1 lg:items-center lg:justify-end lg:space-x-6">
-                <a href="#" class="text-sm font-medium text-gray-700 hover:text-gray-800">Sign in</a>
+                <span href="#" class="text-sm font-medium text-gray-700 hover:text-gray-800">Síguenos</span>
+                <a href="#" class="text-sm font-medium text-amber-800 hover:text-amber-900"><i class="pi pi-tiktok "></i></a>
+                <i class="pi pi-instagram font-medium text-amber-800 hover:text-amber-900"></i>
                 <span class="h-6 w-px bg-gray-200" aria-hidden="true" />
-                <a href="#" class="text-sm font-medium text-gray-700 hover:text-gray-800">Create account</a>
+                <a href="#"><MagnifyingGlassIcon  class="h-6 w-6 text-gray-400 group-hover:text-gray-500" aria-hidden="true" /></a>
               </div>
 
               <!-- Cart -->
@@ -174,7 +176,7 @@
 </template>
 
 <script setup>
-import { ref } from 'vue'
+import { ref, reactive } from 'vue'
 import {
   Dialog,
   DialogPanel,
@@ -191,6 +193,9 @@ import {
   TransitionRoot,
 } from '@headlessui/vue'
 import { Bars3Icon, MagnifyingGlassIcon, ShoppingBagIcon, XMarkIcon } from '@heroicons/vue/24/outline'
+import { useUtils } from "@composables/useUtils";
+
+const appUseUtils = reactive(useUtils());
 
 const navigation = {
   categories: [
@@ -199,16 +204,16 @@ const navigation = {
       name: 'Papeleria',
       featured: [
         {
-          name: 'New Arrivals',
+          name: 'Nuevo Lanzamiento',
           href: '#',
-          imageSrc: 'https://tailwindui.com/img/ecommerce-images/mega-menu-category-01.jpg',
-          imageAlt: 'Models sitting back to back, wearing Basic Tee in black and bone.',
+          imageSrc: 'productos/note-pad-gran-danes-01-2.png',
+          imageAlt: 'Notepad de gran dannes',
         },
         {
-          name: 'Basic Tees',
+          name: 'Strickers Escolares',
           href: '#',
-          imageSrc: 'https://tailwindui.com/img/ecommerce-images/mega-menu-category-02.jpg',
-          imageAlt: 'Close up of Basic Tee fall bundle with off-white, ochre, olive, and black tees.',
+          imageSrc: 'productos/ce-grandes.jpg',
+          imageAlt: 'stickers escolares grandes',
         },
       ],
       sections: [
@@ -259,21 +264,20 @@ const navigation = {
       ],
     },
     {
-      id: 'madera',
-      name: 'Madera',
+      id: 'accesorios',
+      name: 'Accesorios',
       featured: [
         {
-          name: 'New Arrivals',
+          name: 'Nuevos Lanzamientos',
           href: '#',
-          imageSrc: 'https://tailwindui.com/img/ecommerce-images/product-page-04-detail-product-shot-01.jpg',
-          imageAlt: 'Drawstring top with elastic loop closure and textured interior padding.',
+          imageSrc: 'productos/llavero-laser.jpg',
+          imageAlt: 'llaveros de madera',
         },
         {
-          name: 'Artwork Tees',
+          name: 'Llavero Zelda y Link',
           href: '#',
-          imageSrc: 'https://tailwindui.com/img/ecommerce-images/category-page-02-image-card-06.jpg',
-          imageAlt:
-            'Three shirts in gray, white, and blue arranged on table with same line drawing of hands and shapes overlapping on front of shirt.',
+          imageSrc: 'productos/llavero-zelda-link-01.png',
+          imageAlt: 'llavero de pastico zelda',
         },
       ],
       sections: [
@@ -316,8 +320,8 @@ const navigation = {
     },
   ],
   pages: [
-    { name: 'Company', href: '#' },
-    { name: 'Stores', href: '#' },
+    { name: 'Nosotros', href: '#' },
+    { name: 'FAQ', href: '#' },
   ],
 }
 

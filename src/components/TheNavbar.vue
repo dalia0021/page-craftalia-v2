@@ -82,7 +82,7 @@
     </TransitionRoot>
 
     <header class="relative bg-white">
-      <p class="flex h-10 items-center justify-center bg-amber-900 px-4 text-sm font-medium text-white sm:px-6 lg:px-8"> 🇲🇽 ¡Envios a toda la republica Mexicana!</p>
+      <p class="flex h-10 items-center justify-center bg-amber-900 px-4 text-sm font-medium text-white sm:px-6 lg:px-8"> 🇲🇽 ¡Envios a todo México!</p>
 
       <nav aria-label="Top" class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div class="border-b border-gray-200">

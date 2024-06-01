@@ -8,7 +8,7 @@ const sections = ref([
     {
         itemImageSrc: '3-simple.png',
         alt: 'craftalia',
-        title: 'Articulos de madera, Papeleria y accesorios',
+        title: 'Artículos de madera, Papeleria y accesorios',
         subtitle: 'Descubre nuestra colección de artículos de madera y papelería hechos a mano.'
     }, {
         itemImageSrc: 'cuadro-peonia.png',
@@ -35,7 +35,7 @@ const setActive = (index) => {
 setInterval(()=>{
     setActive(activeSection.value +1)
 
-}, 4000)
+}, 5000)
 
 
 
@@ -46,11 +46,11 @@ setInterval(()=>{
     <div class="container flex flex-col px-6 py-4 mx-auto space-y-6 lg:h-[32rem] lg:py-16 lg:flex-row lg:items-center">
         <div :class="{'lg:w-1/2': activeSection}" class="flex flex-col justify-center w-full lg:flex-row ">
             <div v-if="activeSection" class="max-w-lg lg:mx-12">
-                <h3 class=" text-amber-500 mb-2 text-matcha">Nuevos Artículos</h3>
+                <h3 class=" text-amber-600 mb-2 text-matcha">Nuevos Artículos</h3>
                 <h1 class="text-3xl font-semibold tracking-wide text-amber-900 dark:text-white lg:text-4xl">{{sections[activeSection].title}}</h1>
                 <p class="mt-4 text-gray-600 dark:text-gray-300">{{ sections[activeSection].subtitle }}</p>
                 <div class="mt-6">
-                    <a href="#" class="px-6 py-2.5 mt-6 text-sm font-medium leading-5 text-center text-white capitalize bg-amber-400 rounded-full hover:bg-amber-300 lg:mx-0 lg:w-auto focus:outline-none">Ver {{ sections[activeSection].title  }}</a>
+                    <a href="#" class="px-6 py-2.5 mt-6 text-sm font-medium leading-5 text-center text-white capitalize bg-amber-600 rounded-full hover:bg-amber-500 lg:mx-0 lg:w-auto focus:outline-none">Ver {{ sections[activeSection].title  }}</a>
                 </div>
             </div>
 
@@ -71,7 +71,7 @@ setInterval(()=>{
     <div class="flex justify-center mt-6 lg:mt-0 space-x-3">
         <button 
             v-for="(items, idx) in sections" :key="idx"  
-            :class="[activeSection == idx ? 'bg-amber-500' : 'bg-gray-300 hover:bg-amber-500']"
+            :class="[activeSection == idx ? 'bg-amber-600' : 'bg-gray-300 hover:bg-amber-600']"
             @click="setActive(idx)"
             class="w-5 h-2 mb-3 rounded lg:mx-0 focus:outline-none" ></button>
     </div>
@@ -82,7 +82,7 @@ setInterval(()=>{
 <style>
     .pattern {
         background-image: url(../assets/banner-craft.png);
-        background-position: top center;
+        background-position: center center;
         background-repeat: no-repeat;
         background-size: cover;
         position: relative;

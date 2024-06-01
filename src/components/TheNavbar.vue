@@ -1,3 +1,224 @@
+
+<script setup>
+import { ref, reactive } from 'vue'
+import {
+  Dialog,
+  DialogPanel,
+  Popover,
+  PopoverButton,
+  PopoverGroup,
+  PopoverPanel,
+  Tab,
+  TabGroup,
+  TabList,
+  TabPanel,
+  TabPanels,
+  TransitionChild,
+  TransitionRoot,
+} from '@headlessui/vue'
+import { Bars3Icon, MagnifyingGlassIcon, ShoppingBagIcon, XMarkIcon } from '@heroicons/vue/24/outline'
+import { useUtils } from "@composables/useUtils";
+
+const appUseUtils = reactive(useUtils());
+
+const navigation = {
+  categories: [
+    {
+      id: 'papeleria',
+      name: 'Papeleria',
+      featured: [
+        {
+          name: 'Nuevo Lanzamiento',
+          href: '#',
+          imageSrc: 'productos/note-pad-gran-danes-01-2.png',
+          imageAlt: 'Notepad de gran dannes',
+        },
+        {
+          name: 'Strickers Escolares',
+          href: '#',
+          imageSrc: 'productos/ce-grandes.jpg',
+          imageAlt: 'stickers escolares grandes',
+        },
+      ],
+      sections: [
+        {
+          id: 'stickers',
+          name: 'Stickers',
+          items: [
+            { name: 'Etiquetas escolares ', href: '#' },
+            { name: 'Etiquetas para negocio', href: '#' },
+            { name: 'Stickers social ', href: '#' },
+          ],
+        },
+        {
+          id: 'cuadernos',
+          name: 'Cuadernos',
+          items: [
+            { name: 'Cuadernos', href: '#' },
+            { name: 'Libretas', href: '#' },
+          ],
+        },
+        {
+          id: 'notepads',
+          name: 'Notepads',
+          items: [ 
+            { name: 'notas cuadras', href: '#' },
+            { name: 'My Way', href: '#' },
+            { name: 'Re-Arranged', href: '#' },
+          ],
+        },
+        
+        {
+          id: 'sellos',
+          name: 'Sellos',
+          items: [
+            { name: 'Sellos mini', href: '#' },
+            { name: 'Sellos para papeleria', href: '#' },
+            { name: 'Sellos para empaques', href: '#' },
+          ],
+        },
+        {
+          id: 'social',
+          name: 'Social',
+          items: [
+            { name: 'Money Holders', href: '#' },
+            { name: 'Candy Box', href: '#' },
+            { name: 'Menus', href: '#' },
+            { name: 'Invitaciones', href: '#' },
+          ],
+        },
+        {
+          id: 'marcapaginas',
+          name: 'Marca Pagina',
+          items: [
+            { name: 'Money Holders', href: '#' },
+            { name: 'Candy Box', href: '#' },
+            { name: 'Menus', href: '#' },
+            { name: 'Invitaciones', href: '#' },
+          ],
+        },
+      ],
+    },
+    {
+      id: 'accesorios',
+      name: 'Accesorios',
+      featured: [
+        {
+          name: 'Nuevos Lanzamientos',
+          href: '#',
+          imageSrc: 'productos/llavero-laser.jpg',
+          imageAlt: 'llaveros de madera',
+        },
+        {
+          name: 'Llavero Zelda y Link',
+          href: '#',
+          imageSrc: 'productos/llavero-zelda-link-01.png',
+          imageAlt: 'llavero de pastico zelda',
+        },
+      ],
+      sections: [
+        {
+          id: 'clothing',
+          name: 'Clothing',
+          items: [
+            { name: 'Tops', href: '#' },
+            { name: 'Pants', href: '#' },
+            { name: 'Sweaters', href: '#' },
+            { name: 'T-Shirts', href: '#' },
+            { name: 'Jackets', href: '#' },
+            { name: 'Activewear', href: '#' },
+            { name: 'Browse All', href: '#' },
+          ],
+        },
+        {
+          id: 'accessories',
+          name: 'Accessories',
+          items: [
+            { name: 'Watches', href: '#' },
+            { name: 'Wallets', href: '#' },
+            { name: 'Bags', href: '#' },
+            { name: 'Sunglasses', href: '#' },
+            { name: 'Hats', href: '#' },
+            { name: 'Belts', href: '#' },
+          ],
+        },
+        {
+          id: 'brands',
+          name: 'Brands',
+          items: [
+            { name: 'Re-Arranged', href: '#' },
+            { name: 'Counterfeit', href: '#' },
+            { name: 'Full Nelson', href: '#' },
+            { name: 'My Way', href: '#' },
+          ],
+        },
+      ],
+    },
+    {
+      id: 'otros',
+      name: 'Otros',
+      featured: [
+        {
+          name: 'Nuevos Lanzamientos',
+          href: '#',
+          imageSrc: 'productos/llavero-laser.jpg',
+          imageAlt: 'llaveros de madera',
+        },
+        {
+          name: 'Llavero Zelda y Link',
+          href: '#',
+          imageSrc: 'productos/llavero-zelda-link-01.png',
+          imageAlt: 'llavero de pastico zelda',
+        },
+      ],
+      sections: [
+        {
+          id: 'clothing',
+          name: 'Clothing',
+          items: [
+            { name: 'Tops', href: '#' },
+            { name: 'Pants', href: '#' },
+            { name: 'Sweaters', href: '#' },
+            { name: 'T-Shirts', href: '#' },
+            { name: 'Jackets', href: '#' },
+            { name: 'Activewear', href: '#' },
+            { name: 'Browse All', href: '#' },
+          ],
+        },
+        {
+          id: 'accessories',
+          name: 'Accessories',
+          items: [
+            { name: 'Watches', href: '#' },
+            { name: 'Wallets', href: '#' },
+            { name: 'Bags', href: '#' },
+            { name: 'Sunglasses', href: '#' },
+            { name: 'Hats', href: '#' },
+            { name: 'Belts', href: '#' },
+          ],
+        },
+        {
+          id: 'brands',
+          name: 'Brands',
+          items: [
+            { name: 'Re-Arranged', href: '#' },
+            { name: 'Counterfeit', href: '#' },
+            { name: 'Full Nelson', href: '#' },
+            { name: 'My Way', href: '#' },
+          ],
+        },
+      ],
+    },
+  ],
+  pages: [
+    { name: 'Nosotros', href: '#' },
+    { name: 'FAQ', href: '#' },
+  ],
+}
+
+const open = ref(false)
+</script>
+
 <template>
   <div class="bg-white ">
     <!-- Mobile menu -->
@@ -23,7 +244,7 @@
                 <div class="border-b border-gray-200">
                   <TabList class="-mb-px flex space-x-8 px-4">
                     <Tab as="template" v-for="category in navigation.categories" :key="category.name" v-slot="{ selected }">
-                      <button :class="[selected ? 'border-indigo-600 text-indigo-600' : 'border-transparent text-gray-900', 'flex-1 whitespace-nowrap border-b-2 px-1 py-4 text-base font-medium']">{{ category.name }}</button>
+                      <button :class="[selected ? 'border-amber-600 text-amber-600' : 'border-transparent text-gray-900', 'flex-1 whitespace-nowrap border-b-2 px-1 py-4 text-base font-medium']">{{ category.name }}</button>
                     </Tab>
                   </TabList>
                 </div>
@@ -61,19 +282,12 @@
 
               <div class="space-y-6 border-t border-gray-200 px-4 py-6">
                 <div class="flow-root">
-                  <a href="#" class="-m-2 block p-2 font-medium text-gray-900">Sign in</a>
+                  <a href="#" class="-m-2 block p-2 font-medium text-gray-900">Síguenos</a>
                 </div>
                 <div class="flow-root">
-                  <a href="#" class="-m-2 block p-2 font-medium text-gray-900">Create account</a>
+                  <a href="#" class="-m-2 block p-2 font-medium text-amber-900"><i class="pi pi-tiktok "></i> TikTok</a>
+                  <a href="#" class="-m-2 block p-2 font-medium text-amber-900"><i class="pi pi-instagram"></i> Instagram</a>
                 </div>
-              </div>
-
-              <div class="border-t border-gray-200 px-4 py-6">
-                <a href="#" class="-m-2 flex items-center p-2">
-                  <img src="https://tailwindui.com/img/flags/flag-canada.svg" alt="" class="block h-auto w-5 flex-shrink-0" />
-                  <span class="ml-3 block text-base font-medium text-gray-900">CAD</span>
-                  <span class="sr-only">, change currency</span>
-                </a>
               </div>
             </DialogPanel>
           </TransitionChild>
@@ -154,9 +368,15 @@
               <div class="hidden lg:flex lg:flex-1 lg:items-center lg:justify-end lg:space-x-6">
                 <span href="#" class="text-sm font-medium text-gray-700 hover:text-gray-800">Síguenos</span>
                 <a href="#" class="text-sm font-medium text-amber-800 hover:text-amber-900"><i class="pi pi-tiktok "></i></a>
-                <i class="pi pi-instagram font-medium text-amber-800 hover:text-amber-900"></i>
+                <a href="#" class="text-sm font-medium text-amber-800 hover:text-amber-900"><i class="pi pi-instagram"></i></a>
                 <span class="h-6 w-px bg-gray-200" aria-hidden="true" />
-                <a href="#"><MagnifyingGlassIcon  class="h-6 w-6 text-gray-400 group-hover:text-gray-500" aria-hidden="true" /></a>
+              </div>
+
+              <div class="flex lg:ml-6">
+                <a href="#" class="p-2 text-gray-400 hover:text-gray-500">
+                  <span class="sr-only">Search</span>
+                  <MagnifyingGlassIcon class="h-6 w-6" aria-hidden="true" />
+                </a>
               </div>
 
               <!-- Cart -->
@@ -174,159 +394,3 @@
     </header>
   </div>
 </template>
-
-<script setup>
-import { ref, reactive } from 'vue'
-import {
-  Dialog,
-  DialogPanel,
-  Popover,
-  PopoverButton,
-  PopoverGroup,
-  PopoverPanel,
-  Tab,
-  TabGroup,
-  TabList,
-  TabPanel,
-  TabPanels,
-  TransitionChild,
-  TransitionRoot,
-} from '@headlessui/vue'
-import { Bars3Icon, MagnifyingGlassIcon, ShoppingBagIcon, XMarkIcon } from '@heroicons/vue/24/outline'
-import { useUtils } from "@composables/useUtils";
-
-const appUseUtils = reactive(useUtils());
-
-const navigation = {
-  categories: [
-    {
-      id: 'papeleria',
-      name: 'Papeleria',
-      featured: [
-        {
-          name: 'Nuevo Lanzamiento',
-          href: '#',
-          imageSrc: 'productos/note-pad-gran-danes-01-2.png',
-          imageAlt: 'Notepad de gran dannes',
-        },
-        {
-          name: 'Strickers Escolares',
-          href: '#',
-          imageSrc: 'productos/ce-grandes.jpg',
-          imageAlt: 'stickers escolares grandes',
-        },
-      ],
-      sections: [
-        {
-          id: 'stickers',
-          name: 'Stickers',
-          items: [
-            { name: 'Escolares ', href: '#' },
-            { name: 'Pequeño Negocio', href: '#' },
-            { name: 'Porductos', href: '#' },
-          ],
-        },
-        {
-          id: 'cuadernos',
-          name: 'Cuadernos',
-          items: [
-            { name: 'Cuadernos con resorte', href: '#' },
-            { name: 'Cuadernos cocidos', href: '#' },
-          ],
-        },
-        {
-          id: 'notepads',
-          name: 'Notepads',
-          items: [
-            { name: 'Full Nelson', href: '#' },
-            { name: 'My Way', href: '#' },
-            { name: 'Re-Arranged', href: '#' },
-          ],
-        },
-        {
-          id: 'sobres',
-          name: 'Sobres',
-          items: [
-            { name: 'Full Nelson', href: '#' },
-            { name: 'My Way', href: '#' },
-            { name: 'Re-Arranged', href: '#' },
-          ],
-        },
-        {
-          id: 'sellos',
-          name: 'Sellos',
-          items: [
-            { name: 'Sellos mini', href: '#' },
-            { name: 'Sellos para papeleria', href: '#' },
-            { name: 'Sellos para empaques', href: '#' },
-          ],
-        },
-      ],
-    },
-    {
-      id: 'accesorios',
-      name: 'Accesorios',
-      featured: [
-        {
-          name: 'Nuevos Lanzamientos',
-          href: '#',
-          imageSrc: 'productos/llavero-laser.jpg',
-          imageAlt: 'llaveros de madera',
-        },
-        {
-          name: 'Llavero Zelda y Link',
-          href: '#',
-          imageSrc: 'productos/llavero-zelda-link-01.png',
-          imageAlt: 'llavero de pastico zelda',
-        },
-      ],
-      sections: [
-        {
-          id: 'clothing',
-          name: 'Clothing',
-          items: [
-            { name: 'Tops', href: '#' },
-            { name: 'Pants', href: '#' },
-            { name: 'Sweaters', href: '#' },
-            { name: 'T-Shirts', href: '#' },
-            { name: 'Jackets', href: '#' },
-            { name: 'Activewear', href: '#' },
-            { name: 'Browse All', href: '#' },
-          ],
-        },
-        {
-          id: 'accessories',
-          name: 'Accessories',
-          items: [
-            { name: 'Watches', href: '#' },
-            { name: 'Wallets', href: '#' },
-            { name: 'Bags', href: '#' },
-            { name: 'Sunglasses', href: '#' },
-            { name: 'Hats', href: '#' },
-            { name: 'Belts', href: '#' },
-          ],
-        },
-        {
-          id: 'brands',
-          name: 'Brands',
-          items: [
-            { name: 'Re-Arranged', href: '#' },
-            { name: 'Counterfeit', href: '#' },
-            { name: 'Full Nelson', href: '#' },
-            { name: 'My Way', href: '#' },
-          ],
-        },
-      ],
-    },
-  ],
-  pages: [
-    { name: 'Nosotros', href: '#' },
-    { name: 'FAQ', href: '#' },
-  ],
-}
-
-const open = ref(false)
-</script>
-
-
-

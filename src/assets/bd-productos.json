@@ -1,0 +1,110 @@
+[
+    {
+        "id":1,
+        "imageFeatured": "featured/llavero-zelda-link.png",
+        "image": "products/llavero-zelda-link-01.png",
+        "category":"Llaveros",
+        "name": "Llavero Zelda y Link - chibi",
+        "description":"",
+        "size": "5",
+        "price": "100.00",
+        "featured": true,
+        "thumbnails":[
+            "products/llavero-zelda-link-01-1.png"
+        ],
+        "characteristics":[
+            "Plastico duro trasparente",
+            "Pintura acrílica",
+            "Acabado con resina",
+            "Diseño: un solo lado"
+        ]
+
+    },
+    {
+        "id":2,
+        "imageFeatured": null,
+        "image": "products/colguije-one-piece-jinbe-01.png",
+        "category":"Colguijes",
+        "name": "Colguije One piece - Ginbe",
+        "description":"",
+        "size": "1.5 x 2",
+        "price": "90.00",
+        "featured": true,
+        "thumbnails":[
+            "products/colguije-one-piece-jinbe-01-1.png"
+        ],
+        "characteristics":[
+            "Plastico duro trasparente",
+            "Pintura acrílica",
+            "Acabado con resina",
+            "Acabado azul con ojuelas holograficas"
+        ]
+
+    },
+    {
+        "id":3,
+        "imageFeatured": null,
+        "image": "products/colguije-ranita-burbujas-01.png",
+        "category":"Colguijes",
+        "name": "Colguije Ranita - Burbujas",
+        "description":"",
+        "size": "1.5 x 1.5",
+        "price": "70.00",
+        "featured": false,
+        "thumbnails":[
+            "products/colguije-ranita-burbujas-01-1.png",
+            "products/colguije-ranita-burbujas-01-2.png",
+            "products/colguije-ranita-burbujas-01-3.png"
+        ],
+        "characteristics":[
+            "Plastico duro trasparente",
+            "Pintura acrílica",
+            "Acabado con resina",
+            "Acabado brillantina azul"
+        ]
+
+    },
+    {
+        "id":4,
+        "imageFeatured": null,
+        "image": "products/pin-one-piece-choper-01.png",
+        "category":"Pines",
+        "name": "Pin One piece - Chopper",
+        "description":"",
+        "size": "1.5 x 1.5",
+        "price": "80.00",
+        "featured": false,
+        "thumbnails":[
+            "products/pin-one-piece-choper-01-1.png",
+            "products/pin-one-piece-choper-01-2.png"
+        ],
+        "characteristics":[
+            "Plastico duro trasparente",
+            "Pintura acrílica",
+            "Acabado con resina",
+            "Acabado brillantina azul"
+        ]
+
+    },
+    {
+        "id":5,
+        "imageFeatured": null,
+        "image": "products/note-pad-gran-danes-01.png",
+        "category":"Bloc de notas",
+        "name": "Notepad Perrito y huellas - gran danés",
+        "description":"",
+        "size": "13 x 10",
+        "price": "60.00",
+        "featured": false,
+        "thumbnails":[
+            "products/note-pad-gran-danes-01-1.png",
+            "products/note-pad-gran-danes-01-2.png"
+        ],
+        "characteristics":[
+            "50 hojas",
+            "base de apoyo de carton duro"
+        ]
+
+    }
+
+]

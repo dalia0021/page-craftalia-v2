@@ -1,38 +1,54 @@
 
 <template>
-    <div class="card">
-        <Carousel :value="products" :numVisible="3" :numScroll="1" :responsiveOptions="responsiveOptions">
+    <div class="py-20 bg-amber-50">
+        <div class="mx-auto max-w-7xl px-6 lg:px-8">
+        <div class="mx-auto max-w-2xl lg:text-center">
+          <h2 class="text-center text-base leading-7 text-amber-600 text-matcha">¡Bienvenido a craftalia!</h2>
+          <p class="text-center mt-2 text-3xl font-bold tracking-tight text-amber-900 sm:text-4xl">¡Explora nuestras categorias!</p>
+          <!-- <p class="mt-4 text-lg leading-8 text-gray-600">Al elegir productos hechos a mano .</p> -->
+        </div>
+        <div class="mx-auto mt-8">
+            <Carousel :value="products" :numVisible="3" :numScroll="1" :responsiveOptions="responsiveOptions">
             <template #item="slotProps">
-                <div class="border border-inherit rounded-lg m-2 p-3">
+                <div class="bg-white border surface-border rounded-lg m-2  p-3">
                     <div class="mb-3">
                         <div class="relative mx-auto">
-                            <img :src="'https://primefaces.org/cdn/primevue/images/product/' + slotProps.data.image" :alt="slotProps.data.name" class="w-full border-round" />
-                            <Tag :value="slotProps.data.status" :severity="getSeverity(slotProps.data.status)" class="absolute" style="left:5px; top: 5px"/>
+                            <img :src="appUseUtils.getImgUrl(slotProps.data.image)" :alt="slotProps.data.name" class="w-full border-round" />
+                            <Tag :value="slotProps.data.inventoryStatus" :severity="getSeverity(slotProps.data.inventoryStatus)" class="absolute" style="left:5px; top: 5px"/>
                         </div>
                     </div>
-                    <div class="mb-3 font-medium">{{ slotProps.data.name }}</div>
+                    <div class="text-center">
+                        <h2 class="my-8 text-xl font-semibold uppercase text-amber-900">{{ slotProps.data.name }}</h2>
+                    </div>
                 </div>
             </template>
         </Carousel>
+        </div>
+      </div>
+
+        
     </div>
 </template>
 
 <script setup>
-import { ref } from "vue";
+import { ref, reactive } from "vue";
+import { useUtils } from "@composables/useUtils";
+
+const appUseUtils = reactive(useUtils());
 
 const products = ref([
 {
     id: '1000',
     name: 'Papeleria',
     description: 'Cuadernos, Stickers y mas',
-    image: 'bamboo-watch.jpg',
+    image: 'productos/cuaderno-chico.png',
     status: 'Nuevo',
 },{
     id: '1002',
     code: 'f230fh0g3',
     name: 'Bamboo Watch',
     description: 'Product Description',
-    image: 'bamboo-watch.jpg',
+    image: 'productos/cuaderno-chico.png',
     price: 65,
     category: 'Accessories',
     quantity: 24,
@@ -43,7 +59,7 @@ const products = ref([
     code: 'f230fh0g3',
     name: 'Bamboo Watch',
     description: 'Product Description',
-    image: 'bamboo-watch.jpg',
+    image: 'productos/cuaderno-chico.png',
     price: 65,
     category: 'Accessories',
     quantity: 24,
@@ -54,7 +70,7 @@ const products = ref([
     code: 'f230fh0g3',
     name: 'Bamboo Watch',
     description: 'Product Description',
-    image: 'bamboo-watch.jpg',
+    image: 'productos/cuaderno-chico.png',
     price: 65,
     category: 'Accessories',
     quantity: 24,

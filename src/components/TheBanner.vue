@@ -73,7 +73,7 @@ setInterval(()=>{
             v-for="(items, idx) in sections" :key="idx"  
             :class="[activeSection == idx ? 'bg-amber-600' : 'bg-gray-300 hover:bg-amber-600']"
             @click="setActive(idx)"
-            class="w-5 h-2 mb-3 rounded lg:mx-0 focus:outline-none" ></button>
+            class="w-8 h-2 rounded-md mb-3 lg:mx-0 focus:outline-none" ></button>
     </div>
 </div>
 

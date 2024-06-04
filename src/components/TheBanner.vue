@@ -22,7 +22,7 @@ const sections = ref([
         subtitle: 'Exprésate con estilo con nuestro Pin Artesanal que da un toque único y colorido a cualquier atuendo. Añade un detalle divertido y único a tu look con estos pines artesanales. ¡Ideales para cualquier ocasión!'
     }
 ]);
-const activeSection = ref(0)
+const activeSection = ref(1)
 const setActive = (index) => {
   let active = index;
 
@@ -43,9 +43,9 @@ setInterval(()=>{
 
 <template>
 <div class="pattern bg-amber-50">
-    <div class="container flex flex-col px-6 py-4 mx-auto space-y-6 lg:h-[32rem] lg:py-16 lg:flex-row lg:items-center">
-        <div :class="{'lg:w-1/2': activeSection}" class="flex flex-col justify-center w-full lg:flex-row ">
-            <div v-if="activeSection" class="max-w-lg lg:mx-12">
+    <div class="container flex flex-col px-6 py-4 mx-auto space-y-6 lg:h-[32rem] lg:py-16 lg:flex-row lg:items-center lg:text-left text-center">
+        <div :class="{'lg:w-1/2': activeSection}" class="flex flex-col justify-center w-full lg:flex-row lg:order-1  order-2 mt-5">
+            <div v-if="activeSection" class="max-w-lg sm:mx-auto lg:mx-12">
                 <h3 class=" text-amber-600 mb-2 text-matcha">Nuevos Artículos</h3>
                 <h1 class="text-3xl font-semibold tracking-wide text-amber-900 dark:text-white lg:text-4xl">{{sections[activeSection].title}}</h1>
                 <p class="mt-4 text-gray-600 dark:text-gray-300">{{ sections[activeSection].subtitle }}</p>
@@ -64,8 +64,8 @@ setInterval(()=>{
             </div>
         </div>
 
-        <div v-if="activeSection" class="flex items-center justify-center w-full h-96 lg:w-1/2">
-            <img class="object-cover h-full max-w-2xl rounded-md" :src="appUseUtils.getImgUrl(sections[activeSection].itemImageSrc)" :alt="sections[activeSection].alt">
+        <div v-if="activeSection" class="flex items-center justify-center w-full lg:h-96 md:96 h-44 lg:w-1/2 lg:order-2  order-1">
+            <img class="object-cover h-full max-w-2xl" :src="appUseUtils.getImgUrl(sections[activeSection].itemImageSrc)" :alt="sections[activeSection].alt">
         </div>
     </div>
     <div class="flex justify-center mt-6 lg:mt-0 space-x-3">

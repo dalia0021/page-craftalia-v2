@@ -1,32 +1,31 @@
 
 <template>
-    <div class="py-20 bg-amber-50">
+    <div class="py-20 bg-orange-50">
         <div class="mx-auto max-w-7xl px-6 lg:px-8">
         <div class="mx-auto max-w-2xl lg:text-center">
-          <h2 class="text-center text-base leading-7 text-amber-600 text-matcha">¡Bienvenido a craftalia!</h2>
-          <p class="text-center mt-2 text-3xl font-bold tracking-tight text-amber-900 sm:text-4xl">¡Explora nuestras categorias!</p>
+          <h2 class="text-center text-base leading-7 text-amber-600 text-matcha">¿No sabes por donde comenzar?</h2>
+          <p class="text-center mt-2 text-3xl font-bold tracking-tight text-amber-900 sm:text-4xl">¡Explora nuestras Categorías!</p>
           <!-- <p class="mt-4 text-lg leading-8 text-gray-600">Al elegir productos hechos a mano .</p> -->
         </div>
         <div class="mx-auto mt-8">
-            <Carousel :value="products" :numVisible="3" :numScroll="1" :responsiveOptions="responsiveOptions">
-            <template #item="slotProps">
-                <div class="bg-white border surface-border rounded-lg m-2  p-3">
-                    <div class="mb-3">
-                        <div class="relative mx-auto">
-                            <img :src="appUseUtils.getImgUrl(slotProps.data.image)" :alt="slotProps.data.name" class="w-full border-round" />
-                            <Tag :value="slotProps.data.inventoryStatus" :severity="getSeverity(slotProps.data.inventoryStatus)" class="absolute" style="left:5px; top: 5px"/>
+            <Carousel :value="products" :numVisible="3" :numScroll="1" :responsiveOptions="responsiveOptions" circular :autoplayInterval="3000">
+                <template #item="slotProps">
+                    <div class="bg-white border surface-border rounded-lg m-2 ">
+                        <div class="mb-3">
+                            <div class="relative mx-auto">
+                                <img :src="appUseUtils.getImgUrl(slotProps.data.image)" :alt="slotProps.data.name" class="w-full  rounded-t-lg" />
+                                <Tag v-if="slotProps.data.status == 1" value="NUEVOS ARTÍCULOS" severity="success" class="absolute" style="left:5px; top: 5px"/>
+                            </div>
+                        </div>
+                        <div class="text-center">
+                            <h4 class="mt-8 text-amber-600 text-matcha">{{ slotProps.data.description }}</h4>
+                            <h2 class="mb-8 mt-1 text-xl font-bold uppercase text-amber-900">{{ slotProps.data.name }}</h2>
                         </div>
                     </div>
-                    <div class="text-center">
-                        <h2 class="my-8 text-xl font-semibold uppercase text-amber-900">{{ slotProps.data.name }}</h2>
-                    </div>
-                </div>
-            </template>
-        </Carousel>
+                </template>
+            </Carousel>
         </div>
       </div>
-
-        
     </div>
 </template>
 
@@ -38,50 +37,47 @@ const appUseUtils = reactive(useUtils());
 
 const products = ref([
 {
-    id: '1000',
-    name: 'Papeleria',
+    id: '1',
+    name: 'Llaveros y pins',
+    description: 'Accesorios, llaveros, pines',
+    image: 'productos/llavero-nutria.png',
+    status: 1,
+},{
+    id: '2',
+    name: 'Cuadros',
     description: 'Cuadernos, Stickers y mas',
-    image: 'productos/cuaderno-chico.png',
-    status: 'Nuevo',
+    image: 'productos/letrero-madera.png',
+    status: 1,
 },{
-    id: '1002',
-    code: 'f230fh0g3',
-    name: 'Bamboo Watch',
-    description: 'Product Description',
-    image: 'productos/cuaderno-chico.png',
-    price: 65,
-    category: 'Accessories',
-    quantity: 24,
-    inventoryStatus: 'INSTOCK',
-    rating: 5
+    id: '3',
+    name: 'Social',
+    description: 'Cuadernos, Stickers y mas',
+    image: 'productos/social.png',
+    status: '',
 },{
-    id: '1003',
-    code: 'f230fh0g3',
-    name: 'Bamboo Watch',
-    description: 'Product Description',
-    image: 'productos/cuaderno-chico.png',
-    price: 65,
-    category: 'Accessories',
-    quantity: 24,
-    inventoryStatus: 'INSTOCK',
-    rating: 5
+    id: '4',
+    name: 'Stickers',
+    description: 'Cuadernos, Stickers y mas',
+    image: 'productos/stickers.jpg',
+    status: '',
 },{
-    id: '1004',
-    code: 'f230fh0g3',
-    name: 'Bamboo Watch',
-    description: 'Product Description',
-    image: 'productos/cuaderno-chico.png',
-    price: 65,
-    category: 'Accessories',
-    quantity: 24,
-    inventoryStatus: 'INSTOCK',
-    rating: 5
+    id: '5',
+    name: 'Sellos',
+    description: 'Cuadernos, Stickers y mas',
+    image: 'productos/sellos.png',
+    status: '',
+},{
+    id: '6',
+    name: 'Todos los productos',
+    description: 'Cuadernos, Stickers y mas',
+    image: 'productos/todos.png',
+    status: '',
 },
 ]);
 const responsiveOptions = ref([
     {
         breakpoint: '1400px',
-        numVisible: 2,
+        numVisible: 3,
         numScroll: 1
     },
     {
@@ -101,19 +97,4 @@ const responsiveOptions = ref([
     }
 ]);
 
-const getSeverity = (status) => {
-    switch (status) {
-        case 'Nuevo':
-            return 'success';
-
-        case 'LOWSTOCK':
-            return 'warning';
-
-        case 'OUTOFSTOCK':
-            return 'danger';
-
-        default:
-            return "null";
-    }
-};
 </script>

@@ -14,7 +14,7 @@
                    <component :is="item.icon" class="h-10 w-10" aria-hidden="true" />
                 </span>
 
-                <h1 class="text-xl font-semibold text-gray-700 capitalize dark:text-white">{{item.name}}</h1>
+                <h1 class="text-xl font-semibold text-gray-700 dark:text-white">{{item.name}}</h1>
 
                 <p class="text-gray-500 dark:text-gray-300">
                     {{item.desc}}
@@ -40,7 +40,7 @@
         desc:"Cada pieza es creada con amor y cariño, mostrandoles a tus seres queridos cuánto te importan con un detalle especial.",
         icon:GiftIcon
     }, {
-        name:"Apoyo a la artesania",
+        name:"Apoyo a la Artesania",
         desc:"Al elegir productos hechos a mano, estás contribuyendo a crear y mantener a los pequeños negocios",
         icon:HeartIcon
     }

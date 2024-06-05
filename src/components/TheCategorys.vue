@@ -1,6 +1,6 @@
 
 <template>
-    <div class="py-20 bg-orange-50">
+    <div class="py-20 bg-amber-50">
         <div class="mx-auto max-w-7xl px-6 lg:px-8">
         <div class="mx-auto max-w-2xl lg:text-center">
           <h2 class="text-center text-base leading-7 text-amber-600 text-matcha">¿No sabes por donde comenzar?</h2>
@@ -45,31 +45,31 @@ const products = ref([
 },{
     id: '2',
     name: 'Cuadros',
-    description: 'Cuadernos, Stickers y mas',
+    description: 'Cuadros, placas de madera',
     image: 'productos/letrero-madera.png',
     status: 1,
 },{
     id: '3',
     name: 'Social',
-    description: 'Cuadernos, Stickers y mas',
+    description: "Invitaciones, gafetes, menus",
     image: 'productos/social.png',
     status: '',
 },{
     id: '4',
     name: 'Stickers',
-    description: 'Cuadernos, Stickers y mas',
+    description: 'Escolares, negocio, empaques',
     image: 'productos/stickers.jpg',
     status: '',
 },{
     id: '5',
     name: 'Sellos',
-    description: 'Cuadernos, Stickers y mas',
+    description: 'Sellos para empaques o papeleria',
     image: 'productos/sellos.png',
     status: '',
 },{
     id: '6',
     name: 'Todos los productos',
-    description: 'Cuadernos, Stickers y mas',
+    description: 'Papeleria, accesorios y mas',
     image: 'productos/todos.png',
     status: '',
 },

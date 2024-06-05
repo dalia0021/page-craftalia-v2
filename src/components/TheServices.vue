@@ -2,7 +2,7 @@
     <div class="bg-white py-20">
       <div class="mx-auto max-w-7xl px-6 lg:px-8">
         <div class="mx-auto max-w-2xl lg:text-center">
-          <h2 class="text-center text-base leading-7 text-amber-600 text-matcha">¡Bienvenido a craftalia!</h2>
+          <h2 class="text-center text-base leading-7 text-amber-600 text-matcha">¡Bienvenido a Craftalia!</h2>
           <p class="text-center mt-2 text-3xl font-bold tracking-tight text-amber-900 sm:text-4xl">¿Por Qué Elegir Artículos Hechos a Mano?</p>
           <!-- <p class="mt-4 text-lg leading-8 text-gray-600">Al elegir productos hechos a mano .</p> -->
         </div>

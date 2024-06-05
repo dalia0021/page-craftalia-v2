@@ -22,7 +22,7 @@ const sections = ref([
         subtitle: 'Exprésate con estilo con nuestro Pin Artesanal que da un toque único y colorido a cualquier atuendo. Añade un detalle divertido y único a tu look con estos pines artesanales. ¡Ideales para cualquier ocasión!'
     }
 ]);
-const activeSection = ref(1)
+const activeSection = ref(0)
 const setActive = (index) => {
   let active = index;
 
@@ -32,10 +32,14 @@ const setActive = (index) => {
   activeSection.value = active;
 };
 
-setInterval(()=>{
-    setActive(activeSection.value +1)
+const myFn = () => {setActive(activeSection.value +1);}
 
-}, 5000)
+let myTimer = setInterval(myFn, 5000);
+
+const resetCarousel = () => {
+    clearInterval(myTimer);
+    myTimer = setInterval(myFn, 5000);
+}
 
 
 
@@ -72,7 +76,7 @@ setInterval(()=>{
         <button 
             v-for="(items, idx) in sections" :key="idx"  
             :class="[activeSection == idx ? 'bg-amber-600' : 'bg-gray-300 hover:bg-amber-600']"
-            @click="setActive(idx)"
+            @click="setActive(idx),resetCarousel()"
             class="w-8 h-2 rounded-md mb-3 lg:mx-0 focus:outline-none" ></button>
     </div>
 </div>

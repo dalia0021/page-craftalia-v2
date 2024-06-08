@@ -79,6 +79,22 @@ const resetCarousel = () => {
             @click="setActive(idx),resetCarousel()"
             class="w-8 h-2 rounded-md mb-3 lg:mx-0 focus:outline-none" ></button>
     </div>
+    <div class="bg-amber-700 py-4">
+        <div class="flex flex-row justify-around space-x-10 text-white">
+            <div class="text-center">
+                <i class="pi pi-truck" style="font-size: 1.5rem"></i>
+                <p class="text-matcha">Envios a todo México</p>
+            </div>
+            <div class="text-center">
+                <i class="pi pi-hammer" style="font-size: 1.5rem"></i>
+                <p class="text-matcha">Hecho a mano</p>
+            </div>
+            <div class="text-center">
+                <i class="pi pi-gift" style="font-size: 1.5rem"></i>
+                <p class="text-matcha">Personalizado</p>
+            </div>
+        </div>
+    </div>
 </div>
 
 </template>

@@ -306,7 +306,7 @@ const open = ref(false)
             <div class="ml-4 flex lg:ml-0">
               <a href="#">
                 <span class="sr-only">Your Company</span>
-                <img class="h-8 w-auto" src="../assets/logo-craftalia-simple.png" alt="" />
+                <img class="h-8 w-auto" src="../assets/logo.png" alt="" />
               </a>
             </div>
 

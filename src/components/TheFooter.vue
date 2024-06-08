@@ -4,13 +4,22 @@
 </script>
 
 <template>
+     <div class="bg-amber-900 py-4 px-10">
+        <div class="flex flex-row justify-between items-center space-x-10 text-white">
+            <img class="h-20 w-auto" src="../assets/logo-monita.png" alt="" />
+            <div class="text-center">
+                <i class="pi pi-gift" style="font-size: 1.5rem"></i>
+                <p class="text-matcha">Personalizado</p>
+            </div>
+        </div>
+    </div>
 <footer class="bg-white dark:bg-gray-900">
     <div class="container p-6 mx-auto">
-        <div class="lg:flex lg:justify-between">
+        <div class="lg:flex">
             <div class="w-full -mx-6 lg:w-2/5">
                 <div class="px-6">
                     <a href="#">
-                        <img class="w-auto h-7" src="../assets/logo-craftalia-simple.png" alt="">
+                        <img class="w-auto h-7" src="../assets/logo.png" alt="">
                     </a>
 
                     <p class="max-w-sm mt-2 text-gray-500 dark:text-gray-400">hechos con cariño y amor.</p>

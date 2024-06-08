@@ -41,7 +41,7 @@
         icon:GiftIcon
     }, {
         name:"Apoyo a la Artesania",
-        desc:"Al elegir productos hechos a mano, estás contribuyendo a crear y mantener a los pequeños negocios",
+        desc:"Con cada compra, estás contribuyendo a mantener los sueños y sustento de un artista y su pequeño negocio.",
         icon:HeartIcon
     }
   ])

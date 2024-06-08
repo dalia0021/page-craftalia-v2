@@ -54,7 +54,7 @@ const resetCarousel = () => {
                 <h1 class="text-3xl font-semibold tracking-wide text-amber-900 dark:text-white lg:text-4xl">{{sections[activeSection].title}}</h1>
                 <p class="mt-4 text-gray-600 dark:text-gray-300">{{ sections[activeSection].subtitle }}</p>
                 <div class="mt-6">
-                    <a href="#" class="px-6 py-2.5 mt-6 text-sm font-medium leading-5 text-center text-white capitalize bg-amber-600 rounded-full hover:bg-amber-500 lg:mx-0 lg:w-auto focus:outline-none">Ver {{ sections[activeSection].title  }}</a>
+                    <a href="#" class="px-6 py-2.5 mt-6 text-sm font-semibold leading-5 text-center text-white capitalize bg-amber-600 rounded-full hover:bg-amber-500 lg:mx-0 lg:w-auto focus:outline-none">Ver {{ sections[activeSection].title  }}</a>
                 </div>
             </div>
 
@@ -63,7 +63,7 @@ const resetCarousel = () => {
                 <h1 class="text-3xl font-semibold tracking-wide text-amber-900 dark:text-white lg:text-4xl">{{sections[activeSection].title}}</h1>
                 <p class="mt-4 text-gray-600 dark:text-gray-300">{{ sections[activeSection].subtitle }}</p>
                 <div class="mt-6">
-                    <a href="#" class="px-6 py-2.5 mt-6 text-sm font-medium leading-5 text-center text-white capitalize bg-amber-950 rounded-full hover:bg-amber-900 lg:mx-0 lg:w-auto focus:outline-none">Ver catálogo</a>
+                    <a href="#" class="px-6 py-2.5 mt-6 text-sm font-semibold leading-5 text-center text-white capitalize bg-amber-950 rounded-full hover:bg-amber-900 lg:mx-0 lg:w-auto focus:outline-none">Ver todos los artículos</a>
                 </div>
             </div>
         </div>

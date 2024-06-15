@@ -4,13 +4,10 @@
 </script>
 
 <template>
-     <div class="bg-amber-900 py-4 px-10">
-        <div class="flex flex-row justify-between items-center space-x-10 text-white">
-            <img class="h-20 w-auto" src="../assets/logo-monita.png" alt="" />
-            <div class="text-center">
-                <i class="pi pi-gift" style="font-size: 1.5rem"></i>
-                <p class="text-matcha">Personalizado</p>
-            </div>
+     <div class="bg-amber-300 py-4 px-10">
+        <div class="flex flex-row justify-center items-center space-x-5">
+            <img class="h-16 w-auto" src="../assets/logo-monita.png" alt="" />
+            <span class="text-lg text-matcha mr-2">Todos nuestros artículos estan hechos a pedido solo para Tí! </span>
         </div>
     </div>
 <footer class="bg-white dark:bg-gray-900">
@@ -26,7 +23,7 @@
 
                     <div class="flex mt-6 -mx-2">
                         <a href="#"
-                            class="mx-2 text-gray-600 transition-colors duration-300 dark:text-gray-300 hover:text-amber-600"
+                            class="mx-2 text-gray-600 transition-colors  duration-300 dark:text-gray-300 hover:text-amber-600"
                             aria-label="Tiktok">
                             <i class="pi pi-tiktok "></i>
                         </a>

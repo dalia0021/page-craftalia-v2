@@ -1,6 +1,6 @@
 
 <template>
-    <div class="py-20 bg-amber-50">
+    <div class="py-20">
         <div class="mx-auto max-w-7xl px-6 lg:px-8">
         <div class="mx-auto max-w-2xl lg:text-center">
           <h2 class="text-center text-base leading-7 text-amber-600 text-matcha">¿No sabes por donde comenzar?</h2>
@@ -15,7 +15,7 @@
                             <div class="mb-3">
                                 <div class="relative mx-auto">
                                     <img :src="appUseUtils.getImgUrl(slotProps.data.image)" :alt="slotProps.data.name" class="w-full  rounded-t-lg" />
-                                    <Tag v-if="slotProps.data.status == 1" value="NUEVOS ARTÍCULOS" severity="success" class="absolute" style="left:5px; top: 5px"/>
+                                    <Tag v-if="slotProps.data.new" value="NUEVOS ARTÍCULOS" severity="success" class="absolute" style="left:5px; top: 5px"/>
                                 </div>
                             </div>
                             <div class="text-center">
@@ -45,40 +45,40 @@ const appUseUtils = reactive(useUtils());
 const products = ref([
 {
     id: '1',
-    name: 'Llaveros y pins',
-    description: 'Accesorios, llaveros, pines',
-    image: 'productos/llavero-nutria.png',
-    status: 1,
+    name: 'Colguijes',
+    description: 'De madera, plastico o acrílico',
+    image: 'productos/colguije-nutria.png',
+    new: true,
 },{
     id: '2',
     name: 'Letreros',
-    description: 'Letreros, cuadros, placas de madera',
+    description: 'De madera de videojuegos, negocios, evetos',
     image: 'productos/letrero-madera.png',
-    status: 1,
+    new: true,
 },{
     id: '3',
     name: 'Social',
-    description: "Invitaciones, gafetes, menus",
+    description: "Invitaciones, menus, etiquetas",
     image: 'productos/social.png',
-    status: '',
+    new: false,
 },{
     id: '4',
-    name: 'Stickers',
-    description: 'Escolares, negocio, empaques',
+    name: 'Etiquetas',
+    description: 'Escolares, negocio, empaques, social',
     image: 'productos/stickers.jpg',
-    status: '',
+    new: false,
 },{
     id: '5',
     name: 'Sellos',
-    description: 'Sellos para empaques o papeleria',
+    description: 'Para tarjetas, empaques o papeleria',
     image: 'productos/sellos.png',
-    status: '',
+    new: false,
 },{
     id: '6',
     name: 'Todos los productos',
     description: 'Papeleria, accesorios y mas',
     image: 'productos/todos.png',
-    status: '',
+    new: false,
 },
 ]);
 const responsiveOptions = ref([

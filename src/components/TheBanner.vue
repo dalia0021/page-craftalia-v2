@@ -75,15 +75,15 @@ const resetCarousel = () => {
     <div class="flex justify-center mt-6 lg:mt-0 space-x-3">
         <button 
             v-for="(items, idx) in sections" :key="idx"  
-            :class="[activeSection == idx ? 'bg-amber-600' : 'bg-gray-300 hover:bg-amber-600']"
+            :class="[activeSection == idx ? 'bg-amber-500' : 'bg-gray-300 hover:bg-amber-500']"
             @click="setActive(idx),resetCarousel()"
             class="w-8 h-2 rounded-md mb-3 lg:mx-0 focus:outline-none" ></button>
     </div>
-    <div class="bg-amber-700 py-4">
+    <div class="bg-amber-900 py-4">
         <div class="flex flex-row justify-around space-x-10 text-white">
             <div class="text-center">
-                <i class="pi pi-truck" style="font-size: 1.5rem"></i>
-                <p class="text-matcha">Envios a todo México</p>
+                <i class="pi pi-truck"></i>
+                <p class="text-sm font-thin">Envios a todo México</p>
             </div>
             <div class="text-center">
                 <i class="pi pi-hammer" style="font-size: 1.5rem"></i>

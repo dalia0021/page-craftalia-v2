@@ -115,7 +115,7 @@ const navigation = {
       sections: [
         {
           id: 'llaveros',
-          name: 'Llaveros y Colguijes',
+          name: 'Llaveros',
           items: [
             { name: 'Llaveros de Plástico', href: '#' },
             { name: 'Llaveros de Madera', href: '#' },
